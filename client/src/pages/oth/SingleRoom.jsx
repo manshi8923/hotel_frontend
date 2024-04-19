@@ -22,7 +22,7 @@ const SingleRoom = ({match}) => {
   },[])
   const updateHandler=async()=>{
     setLoading(true);
-    await fetch(`/api/oth/rooms/${params}`,{
+    await fetch(`${BaseUrl}/api/oth/rooms/${params}`,{
       method:"put",
       headers:{
         "Content-Type":"application/json"

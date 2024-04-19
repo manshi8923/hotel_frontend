@@ -6,6 +6,7 @@ import Loading from '../../components/Loading';
 import {toast} from "react-toastify";
 import moment from "moment";
 import Navbar_ma from '../../components/Navbar_ma';
+import { BaseUrl } from '../../BaseUrl';
 const UpdateGuest_ma = () => {
   const [loading,setLoading]=useState(false);
   const [done,setDone]=useState(false);
@@ -34,7 +35,7 @@ const UpdateGuest_ma = () => {
   },[arrival,days])
   const updateHandler=async()=>{
     setLoading(true);
-    await fetch(`/api/ma/guests/${params}`,{
+    await fetch(`${BaseUrl}/api/ma/guests/${params}`,{
       method:"put",
       headers:{
         "Content-Type":"application/json"

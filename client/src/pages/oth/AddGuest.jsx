@@ -6,6 +6,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import Navbar_oth from '../../components/Navbar_oth';
+import { BaseUrl } from '../../BaseUrl';
 const AddGuest = () => {
   const [loading,setLoading]=useState(false);
   const [error,setError]=useState(false);
@@ -30,7 +31,7 @@ const AddGuest = () => {
   },[arrival,days])
   const submitHandler=async()=>{
     setLoading(true);
-    await fetch("/api/oth/guests/addguest",{
+    await fetch(`${BaseUrl}/api/oth/guests/addguest`,{
       method:"post",
       headers:{
         "Content-Type":"application/json"

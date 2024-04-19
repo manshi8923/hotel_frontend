@@ -8,6 +8,7 @@ import Loading from '../../components/Loading';
 import {toast} from "react-toastify";
 import { useNavigate } from 'react-router-dom';
 import Navbar_ma from '../../components/Navbar_ma';
+import { BaseUrl } from '../../BaseUrl';
 
 const Rooms_ma = () => {
     const [error, setError] = useState(false);
@@ -23,7 +24,7 @@ const Rooms_ma = () => {
     }
     useEffect(() => {
       setLoading(true);
-      fetch("/api/ma/rooms/", {
+      fetch(`${BaseUrl}/api/ma/rooms/`, {
         method: "get",
         headers: {
           "Content-Type": "application/json"

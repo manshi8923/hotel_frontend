@@ -5,6 +5,7 @@ import Loading from '../../components/Loading';
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 import Navbar_ma from "../../components/Navbar_ma";
+import { BaseUrl } from "../../BaseUrl";
 
 const SingleRoom_ma = () => {
     const [roomNo,setRoomNo]=useState("");
@@ -22,7 +23,7 @@ const SingleRoom_ma = () => {
     },[])
     const updateHandler=async()=>{
       setLoading(true);
-      await fetch(`/api/ma/rooms/${params}`,{
+      await fetch(`${BaseUrl}/api/ma/rooms/${params}`,{
         method:"put",
         headers:{
           "Content-Type":"application/json"

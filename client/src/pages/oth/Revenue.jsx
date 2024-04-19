@@ -17,7 +17,7 @@ const Revenue = () => {
   }
   useEffect(() => {
     setLoading(true);
-    fetch("/api/oth/guests/", {
+    fetch(`${BaseUrl}/api/oth/guests/`, {
       method: "get",
       headers: {
         "Content-Type": "application/json"

@@ -5,6 +5,7 @@ import img2 from '../../img/room.jpeg';
 import {useNavigate} from "react-router-dom";
 import Loading from '../../components/Loading'; 
 import Navbar_ma from '../../components/Navbar_ma';
+import { BaseUrl } from '../../BaseUrl';
 
 
 const Revenue_ma = () => {
@@ -16,7 +17,7 @@ const Revenue_ma = () => {
 
     useEffect(() => {
       setLoading(true);
-      fetch("/api/ma/guests/", {
+      fetch(`${BaseUrl}/api/ma/guests/`, {
         method: "get",
         headers: {
           "Content-Type": "application/json"

@@ -1,0 +1,1 @@
+export const BaseUrl="https://hotel-backend-7qk5.onrender.com";

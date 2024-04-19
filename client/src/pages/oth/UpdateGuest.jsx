@@ -34,7 +34,7 @@ const UpdateGuest = () => {
   },[arrival,days])
   const updateHandler=async()=>{
     setLoading(true);
-    await fetch(`/api/oth/guests/${params}`,{
+    await fetch(`${BaseUrl}/api/oth/guests/${params}`,{
       method:"put",
       headers:{
         "Content-Type":"application/json"

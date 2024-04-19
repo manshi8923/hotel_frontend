@@ -7,6 +7,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import Loading from '../../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import Navbar_oth from '../../components/Navbar_oth';
+import { BaseUrl } from '../../BaseUrl';
 const Guests = () => {
     const [error, setError] = useState("");
     const [errfound,setErrFound]=useState(false);
@@ -22,7 +23,7 @@ const Guests = () => {
     useEffect(()=>{
 
       setLoading(true);
-      fetch("/api/oth/guests/",{
+      fetch(`${BaseUrl}/api/oth/guests/`,{
           method:"get",
           headers:{
             "Content-Type":"application/json"

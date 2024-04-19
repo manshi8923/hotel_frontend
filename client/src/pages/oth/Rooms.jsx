@@ -19,7 +19,7 @@ const Rooms = () => {
   const navigate=useNavigate();
   useEffect(() => {
     setLoading(true);
-    fetch("/api/oth/rooms/", {
+    fetch(`${BaseUrl}/api/oth/rooms/`, {
       method: "get",
       headers: {
         "Content-Type": "application/json"

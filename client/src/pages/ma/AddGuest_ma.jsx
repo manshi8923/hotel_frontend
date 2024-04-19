@@ -6,7 +6,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import Navbar_ma from '../../components/Navbar_ma';
-
+import { BaseUrl } from '../../BaseUrl';
 const AddGuest_ma = () => {
   
     const [loading,setLoading]=useState(false);
@@ -32,7 +32,7 @@ const AddGuest_ma = () => {
     },[arrival,days])
     const submitHandler=async()=>{
       setLoading(true);
-      await fetch("/api/ma/guests/addguest",{
+      await fetch(`${BaseUrl}/api/ma/guests/addguest`,{
         method:"post",
         headers:{
           "Content-Type":"application/json"
